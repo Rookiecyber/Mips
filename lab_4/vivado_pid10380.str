@@ -1,0 +1,278 @@
+/*
+
+Xilinx Vivado v2021.2 (64-bit) [Major: 2021, Minor: 2]
+SW Build: 3367213 on Tue Oct 19 02:48:09 MDT 2021
+IP Build: 3369179 on Thu Oct 21 08:25:16 MDT 2021
+
+Process ID (PID): 10380
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sat Jan 01 13:37:39 CST 2022
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=15
+Scale size: 19
+
+Java version: 	11.0.11 64-bit
+Java home: 	D:/Vivado/2021.2/tps/win64/jre11.0.11_9
+Java executable: 	D:/Vivado/2021.2/tps/win64/jre11.0.11_9/bin/java.exe
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.d3d=false, -Dsun.awt.nopixfmt=true, -Dsun.java2d.dpiaware=true, -Dsun.java2d.uiScale.enabled=false, -Xverify:none, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/com.sun.awt=ALL-UNNAMED, -XX:NewSize=60m, -XX:MaxNewSize=60m, -Xms256m, -Xmx3072m, -Xss5m]
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	wlt
+User home directory: C:/Users/wlt
+User working directory: E:/step_into_mips-lab_4/lab_4/lab_4
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/Vivado
+HDI_APPROOT: D:/Vivado/2021.2
+RDI_DATADIR: D:/Vivado/2021.2/data
+RDI_BINDIR: D:/Vivado/2021.2/bin
+
+Vivado preferences file: C:/Users/wlt/AppData/Roaming/Xilinx/Vivado/2021.2/vivado.xml
+Vivado preferences directory: C:/Users/wlt/AppData/Roaming/Xilinx/Vivado/2021.2/
+Vivado layouts directory: C:/Users/wlt/AppData/Roaming/Xilinx/Vivado/2021.2/data/layouts
+PlanAhead jar file: 	D:/Vivado/2021.2/lib/classes/planAhead.jar
+Vivado log file: 	E:/step_into_mips-lab_4/lab_4/lab_4/vivado.log
+Vivado journal file: 	E:/step_into_mips-lab_4/lab_4/lab_4/vivado.jou
+Engine tmp dir: 	E:/step_into_mips-lab_4/lab_4/lab_4/.Xil/Vivado-10380-DESKTOP-R7LDCND
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Vivado/2021.2/ids_lite/ISE
+XILINX_DSP: D:/Vivado/2021.2/ids_lite/ISE
+XILINX_HLS: D:/Vitis_HLS/2021.2
+XILINX_PLANAHEAD: D:/Vivado/2021.2
+XILINX_VIVADO: D:/Vivado/2021.2
+XILINX_VIVADO_HLS: D:/Vivado/2021.2
+
+
+GUI allocated memory:	256 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,257 MB
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: E:\step_into_mips-lab_4\lab_4\lab_4\lab_4.xpr. Version: Vivado v2021.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project E:/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 57 MB. Current time: 1/1/22, 1:37:40 PM CST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 82 MB (+83826kb) [00:00:19]
+// [Engine Memory]: 1,257 MB (+1166588kb) [00:00:19]
+// WARNING: HEventQueue.dispatchEvent() is taking  4776 ms.
+// Tcl Message: open_project E:/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/2021.2/data/ip'. 
+// [GUI Memory]: 105 MB (+19016kb) [00:00:22]
+// Tcl Message: open_project: Time (s): cpu = 00:00:25 ; elapsed = 00:00:12 . Memory (MB): peak = 1238.773 ; gain = 0.000 
+// Project name: lab_4; location: E:/step_into_mips-lab_4/lab_4/lab_4; part: xc7a100tfgg484-1
+dismissDialog("Open Project"); // bA
+selectMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_DESIGN_HUBS, "Design Hubs"); // al
+// [GUI Memory]: 124 MB (+14702kb) [00:00:25]
+// Tcl Message: update_compile_order -fileset sources_1 
+dismissMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ag
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // a
+selectMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_DESIGN_HUBS, "Design Hubs"); // al
+selectMenuItem(PAResourceCommand.PACommandNames_LICENSE_MANAGE, "Manage License..."); // ao
+dismissMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ag
+// Run Command: PAResourceCommand.PACommandNames_LICENSE_MANAGE
+selectMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ag
+selectMenuItem(PAResourceCommand.PACommandNames_LICENSE_MANAGE, "Manage License..."); // ao
+dismissMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ag
+// Run Command: PAResourceCommand.PACommandNames_LICENSE_MANAGE
+// Elapsed time: 38 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v)]", 1); // D
+// PAPropertyPanels.initPanels (inst_mem.xci) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), imem : inst_mem (inst_mem.xci)]", 3, false); // D
+selectButton(PAResourceItoN.IPPropPanel_UPGRADE_VERSION, "Upgrade Version"); // al
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// 'aa' command handler elapsed time: 3 seconds
+dismissDialog("Enable Core Container"); // ad
+// Elapsed time: 11 seconds
+selectButton(PAResourceItoN.IPPropPanel_UPGRADE_VERSION, "Upgrade Version"); // al
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+dismissDialog("Enable Core Container"); // ad
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_SETTINGS, "Settings"); // al
+selectMenu(PAResourceCommand.PACommandNames_SIMULATION_RUN, "Run Simulation"); // ag
+selectMenu(PAResourceCommand.PACommandNames_SIMULATION_RUN, "Run Simulation"); // ag
+selectMenu(PAResourceCommand.PACommandNames_SIMULATION_RUN, "Run Simulation"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_SETTINGS, "Settings"); // al
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ag
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ag
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ag
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_SETTINGS, "Settings"); // al
+selectMenu(PAResourceCommand.PACommandNames_SIMULATION_RUN, "Run Simulation"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_SETTINGS, "Settings"); // al
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ag
+selectMenuItem(PAResourceCommand.PACommandNames_REPORT_IP_STATUS, "Report IP Status"); // ao
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ag
+// Run Command: PAResourceCommand.PACommandNames_REPORT_IP_STATUS
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+dismissDialog("Report IP Status"); // bA
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Upgrade IP"); // aj
+selectCheckBox(RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN, "Don't show this dialog again", true); // g: TRUE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// 'aa' command handler elapsed time: 6 seconds
+dismissDialog("Enable Core Container"); // ad
+// TclEventType: RUN_DELETE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: upgrade_ip -srcset data_mem [get_ips  {data_mem inst_mem}] -log ip_upgrade.log 
+// Tcl Message: Upgrading 'data_mem' 
+// Tcl Message: INFO: [Project 1-386] Moving file 'E:/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/data_mem/data_mem.xci' from fileset 'data_mem' to fileset 'sources_1'. 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: LOAD_FEATURE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: RUN_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-3422] Upgraded data_mem (Block Memory Generator 8.4) from revision 0 to revision 5 INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'data_mem'... 
+// Tcl Message: Upgrading 'inst_mem' 
+// Tcl Message: INFO: [Project 1-386] Moving file 'E:/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem/inst_mem.xci' from fileset 'inst_mem' to fileset 'sources_1'. 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: INFO: [IP_Flow 19-3422] Upgraded inst_mem (Block Memory Generator 8.4) from revision 0 to revision 5 INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'inst_mem'... INFO: [Coretcl 2-1525] Wrote upgrade log to 'E:/step_into_mips-lab_4/lab_4/lab_4/ip_upgrade.log'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:40:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:40:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 67 MB. Current time: 1/1/22, 1:41:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:42:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:43:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:43:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:45:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 67 MB. Current time: 1/1/22, 1:45:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:46:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:46:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 67 MB. Current time: 1/1/22, 1:47:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:48:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 67 MB. Current time: 1/1/22, 1:48:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:50:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:50:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:51:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:52:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:52:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:53:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 92 MB. Current time: 1/1/22, 1:53:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:54:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:55:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:55:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:56:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:56:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 67 MB. Current time: 1/1/22, 1:57:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:58:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:58:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 1:59:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:00:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:01:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:01:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:02:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 67 MB. Current time: 1/1/22, 2:03:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:04:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:04:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:05:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:06:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:06:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:07:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:07:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:08:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:09:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:09:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:10:29 PM CST
+// Elapsed time: 1842 seconds
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a
+// Elapsed time: 13 seconds
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:10:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 66 MB. Current time: 1/1/22, 2:11:29 PM CST
+// Elapsed time: 49 seconds
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a
+closeMainWindow("lab_4 - [E:/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr] - Vivado 2021.2"); // bb
+// HOptionPane Warning: 'A background task is running. Please wait until it completes to exit Vivado. If you choose to abort background task and exit immediately, you will lose all unsaved changes to project. (Background Task)'
+selectButton("OptionPane.button", "Wait"); // JButton
+closeMainWindow("lab_4 - [E:/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr] - Vivado 2021.2"); // bb
+// HOptionPane Warning: 'A background task is running. Please wait until it completes to exit Vivado. If you choose to abort background task and exit immediately, you will lose all unsaved changes to project. (Background Task)'
+// HMemoryUtils.trashcanNow. Engine heap size: 1,257 MB. GUI used memory: 67 MB. Current time: 1/1/22, 2:11:59 PM CST
