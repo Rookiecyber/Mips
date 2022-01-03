@@ -55,12 +55,22 @@ module aludec(
 					`EXE_OR   :alucontrol <= `EXE_OR_OP;
 					`EXE_XOR :alucontrol <= `EXE_XOR_OP;
 					`EXE_NOR :alucontrol <= `EXE_NOR_OP;
+				//移位指令
+				`EXE_SLL    :alucontrol <= `EXE_SLL_OP   ;
+                `EXE_SLLV   :alucontrol <= `EXE_SLLV_OP     ;
+                `EXE_SRL    :alucontrol <= `EXE_SRL_OP      ;
+                `EXE_SRLV   :alucontrol <= `EXE_SRLV_OP     ;
+                `EXE_SRA    :alucontrol <= `EXE_SRA_OP      ;
+                `EXE_SRAV   :alucontrol <= `EXE_SRAV_OP     ;
+                //默认
+                default     :alucontrol <= `EXE_NOP_OP      ;
 				endcase
 			//逻辑运算 后4条  J型
             `EXE_ANDI  :alucontrol <= `EXE_ANDI_OP;
             `EXE_XORI  :alucontrol <= `EXE_XORI_OP;
             `EXE_LUI   :alucontrol <= `EXE_LUI_OP;
             `EXE_ORI   :alucontrol <= `EXE_ORI_OP;
+            default : alucontrol    <= `EXE_NOP_OP  ;
          endcase
 	end
 endmodule

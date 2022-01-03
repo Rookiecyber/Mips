@@ -54,6 +54,8 @@ module maindec(
 			`EXE_NOP: case(funct)
 				//逻辑运算 前4条
 				`EXE_AND, `EXE_OR, `EXE_XOR, `EXE_NOR: controls <= 6'b110000; // R-type
+                //移位指令 6条
+                `EXE_SLL, `EXE_SRL, `EXE_SRA, `EXE_SLLV, `EXE_SRLV, `EXE_SRAV: controls <= 6'b110000; // R-type
                 default:begin
                     controls <= 6'b000000;  // error op
                 end 

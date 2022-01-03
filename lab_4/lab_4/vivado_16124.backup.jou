@@ -2,10 +2,10 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Mon Jan  3 15:18:22 2022
-# Process ID: 14868
+# Start of session at: Mon Jan  3 13:25:21 2022
+# Process ID: 16124
 # Current directory: C:/Users/wlt/Desktop/step_into_mips/lab_4/lab_4
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1524 C:\Users\wlt\Desktop\step_into_mips\lab_4\lab_4\lab_4.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10212 C:\Users\wlt\Desktop\step_into_mips\lab_4\lab_4\lab_4.xpr
 # Log file: C:/Users/wlt/Desktop/step_into_mips/lab_4/lab_4/vivado.log
 # Journal file: C:/Users/wlt/Desktop/step_into_mips/lab_4/lab_4\vivado.jou
 # Running On: DESKTOP-R7LDCND, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 21333 MB
@@ -17,13 +17,9 @@ launch_simulation
 open_wave_config C:/Users/wlt/Desktop/step_into_mips/lab_4/lab_4/testbench_behav.wcfg
 source testbench.tcl
 current_wave_config {testbench_behav.wcfg}
-add_wave {{/testbench/dut/mips/dp/alu/a}} 
-current_wave_config {testbench_behav.wcfg}
-add_wave {{/testbench/dut/mips/dp/alu/b}} 
-current_wave_config {testbench_behav.wcfg}
-add_wave {{/testbench/dut/mips/dp/alu/sa}} 
-current_wave_config {testbench_behav.wcfg}
-add_wave {{/testbench/dut/mips/dp/alu/y}} 
+add_wave {{/testbench/dut/mips/dp/rf/rf}} 
 relaunch_sim
 save_wave_config {C:/Users/wlt/Desktop/step_into_mips/lab_4/lab_4/testbench_behav.wcfg}
+load_feature simulator
+open_wave_database {E:/FPGAprojects/CO-lab-material-CQU/test/lab4/tb_top_behav.wcfg}
 close_sim

@@ -22,7 +22,7 @@
 `include "defines.vh"
 module alu(
 	input wire[31:0] a,b,
-	//input wire[2:0] op, 
+	input wire [4:0] sa,   
 	input wire [7:0]  alucontrol,
 	output reg[31:0] y,
 	output reg overflow,
@@ -53,6 +53,14 @@ module alu(
             `EXE_XORI_OP    :y <= a ^ { {16{1'b0}} , b[15:0]}   ;
             `EXE_LUI_OP     :y <= {b[15:0] , {16{1'b0}} }   ;
             `EXE_ORI_OP     :y <= a | { {16{1'b0}} , b[15:0]}   ;
+            
+            //ÒÆÎ»Ö¸Áî
+            `EXE_SLL_OP     :y <= b << sa;
+            `EXE_SRL_OP     :y <= b >> sa;
+            `EXE_SRA_OP     :y <= ($signed(b)) >>> sa;
+            `EXE_SLLV_OP    :y <= b << a[4:0];
+            `EXE_SRLV_OP    :y <= b >> a[4:0];
+            `EXE_SRAV_OP    :y <= ($signed(b)) >>> a[4:0];
          endcase
 	end
 	assign zero = (y == 32'b0);
