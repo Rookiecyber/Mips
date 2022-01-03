@@ -34,7 +34,7 @@ module mips(
 			regwriteE,regwriteM,regwriteW;
 	wire [7:0] alucontrolE;
 	wire flushE,equalD;
-
+    wire stallE;
 	controller c(
 		clk,rst,
 		//decode stage
@@ -43,6 +43,7 @@ module mips(
 		pcsrcD,branchD,jumpD,
 		
 		//execute stage
+		stallE,
 		flushE,
 		memtoregE,alusrcE,
 		regdstE,regwriteE,	
@@ -70,6 +71,7 @@ module mips(
 		regwriteE,
 		alucontrolE,
 		flushE,
+		stallE,
 		//mem stage
 		memtoregM,
 		regwriteM,

@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="382.166 ns"></ZoomStartTime>
-      <ZoomEndTime time="412.027 ns"></ZoomEndTime>
-      <Cursor1Time time="394.146 ns"></Cursor1Time>
+      <ZoomStartTime time="326.570 ns"></ZoomStartTime>
+      <ZoomEndTime time="338.056 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="253"></NameColumnWidth>
-      <ValueColumnWidth column_width="122"></ValueColumnWidth>
+      <ValueColumnWidth column_width="117"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="15" />
    <wvobject fp_name="/testbench/dut/clk" type="logic">
@@ -67,13 +67,13 @@
       <obj_property name="ElementShortName">b[31:0]</obj_property>
       <obj_property name="ObjectShortName">b[31:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/alu/y_out" type="array">
+      <obj_property name="ElementShortName">y_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">y_out[31:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/testbench/dut/mips/dp/alu/sa" type="array">
       <obj_property name="ElementShortName">sa[4:0]</obj_property>
       <obj_property name="ObjectShortName">sa[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/mips/dp/alu/y" type="array">
-      <obj_property name="ElementShortName">y[31:0]</obj_property>
-      <obj_property name="ObjectShortName">y[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/dut/mips/dp/alu/hi" type="array">
       <obj_property name="ElementShortName">hi[31:0]</obj_property>

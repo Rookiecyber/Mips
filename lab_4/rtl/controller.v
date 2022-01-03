@@ -28,6 +28,7 @@ module controller(
 	output wire pcsrcD,branchD,jumpD,
 	
 	//execute stage
+	input wire stallE,
 	input wire flushE,
 	output wire memtoregE,alusrcE,
 	output wire regdstE,regwriteE,	
@@ -78,9 +79,10 @@ aludec u_aludec(
 	assign pcsrcD = branchD & equalD;
 
 	//pipeline registers
-	floprc #(13) regE(
+	flopenrc #(13) regE(
 		clk,
 		rst,
+		~stallE,
 		flushE,
 		{memtoregD,memwriteD,alusrcD,regdstD,regwriteD,alucontrolD},
 		{memtoregE,memwriteE,alusrcE,regdstE,regwriteE,alucontrolE}

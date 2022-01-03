@@ -37,6 +37,7 @@ module datapath(
 //	input wire[2:0] alucontrolE,
     input wire[7:0] alucontrolE,
 	output wire flushE,
+	output wire stallE,
 	//mem stage
 	input wire memtoregM,
 	input wire regwriteM,
@@ -71,6 +72,13 @@ module datapath(
 	wire [4:0] writeregW;
 	wire [31:0] aluoutW,readdataW,resultW;
 
+
+     //新添的信号 
+     wire div_stall; //div运算stallE信号
+     wire overflowE;
+     wire zeroE;
+     wire stallE;
+     
 	//hazard detection
 	hazard h(
 		//fetch stage
@@ -87,6 +95,8 @@ module datapath(
 		memtoregE,
 		forwardaE,forwardbE,
 		flushE,
+		div_stall,
+		stallE,
 		//mem stage
 		writeregM,
 		regwriteM,
@@ -128,19 +138,20 @@ module datapath(
     wire [63:0] hilo_o; // 软替代hiloreg
     
 	//execute stage
-	floprc #(32) r1E(clk,rst,flushE,srcaD,srcaE);
-	floprc #(32) r2E(clk,rst,flushE,srcbD,srcbE);
-	floprc #(32) r3E(clk,rst,flushE,signimmD,signimmE);
-	floprc #(5) r4E(clk,rst,flushE,rsD,rsE);
-	floprc #(5) r5E(clk,rst,flushE,rtD,rtE);
-	floprc #(5) r6E(clk,rst,flushE,rdD,rdE);
-	floprc #(5) r7E(clk,rst,flushE,saD,saE);
+	flopenrc #(32) r1E(clk,rst,~stallE ,flushE,srcaD,srcaE);
+	flopenrc #(32) r2E(clk,rst,~stallE ,flushE,srcbD,srcbE);
+	flopenrc #(32) r3E(clk,rst,~stallE,flushE,signimmD,signimmE);
+	flopenrc #(5) r4E(clk,rst,~stallE,flushE,rsD,rsE);
+	flopenrc #(5) r5E(clk,rst,~stallE,flushE,rtD,rtE);
+	flopenrc #(5) r6E(clk,rst,~stallE,flushE,rdD,rdE);
+	
+	flopenrc #(5) r7E(clk,rst,~stallE,flushE,saD,saE);
 
 	mux3 #(32) forwardaemux(srcaE,resultW,aluoutM,forwardaE,srca2E);
 	mux3 #(32) forwardbemux(srcbE,resultW,aluoutM,forwardbE,srcb2E);
 	mux2 #(32) srcbmux(srcb2E,signimmE,alusrcE,srcb3E);
 	
-	alu alu(clk,rst,srca2E,srcb3E,saE ,alucontrolE,hilo_o[63:32],hilo_o[31:0],aluoutE,hilo_o);
+	alu alu(clk,rst,srca2E,srcb3E,saE ,alucontrolE,hilo_o[63:32],hilo_o[31:0],aluoutE,hilo_o,overflowE,zeroE,div_stall);
 	mux2 #(5) wrmux(rtE,rdE,regdstE,writeregE);
 
 	//mem stage
