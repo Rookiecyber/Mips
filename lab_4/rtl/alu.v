@@ -21,10 +21,15 @@
 
 `include "defines.vh"
 module alu(
+    input clk,
+    input rst,
 	input wire[31:0] a,b,
 	input wire [4:0] sa,   
 	input wire [7:0]  alucontrol,
+	input wire [31:0] hi,
+    input wire [31:0] lo,
 	output reg[31:0] y,
+	output wire [63:0] hilo_out,
 	output reg overflow,
 	output wire zero
     );
@@ -42,6 +47,10 @@ module alu(
 	// 		default : y <= 32'b0;
 	// 	endcase	
 	// end
+	
+	reg [63:0] hilo;  //hilo寄存器
+	initial hilo = {64{1'b0}};
+	
 	always @(*) begin
 		case (alucontrol)
 			`EXE_AND_OP     :y <= a & b ;
@@ -61,10 +70,27 @@ module alu(
             `EXE_SLLV_OP    :y <= b << a[4:0];
             `EXE_SRLV_OP    :y <= b >> a[4:0];
             `EXE_SRAV_OP    :y <= ($signed(b)) >>> a[4:0];
+            
+            //数据移动指令
+            `EXE_MFHI_OP    :y <= hi ;
+            `EXE_MFLO_OP    :y <= lo ;
+            `EXE_MTHI_OP    :y <= a;
+            `EXE_MTLO_OP    :y <= a;
          endcase
 	end
 	assign zero = (y == 32'b0);
-
+    
+    //hilo
+    always @(clk)begin 
+        if(rst)begin hilo <= {64{1'b0}};end
+        else case(alucontrol)
+                `EXE_MTHI_OP: hilo <= {a,hilo[31:0]};
+                `EXE_MTLO_OP: hilo <= {hilo[63:32],a};
+                default : hilo <= hilo;
+            endcase 
+    end
+    assign hilo_out  = hilo ;
+    
 	 always @(*) begin
 	 	case (alucontrol)
 //	 		2'b01:overflow <= a[31] & b[31] & ~s[31] |

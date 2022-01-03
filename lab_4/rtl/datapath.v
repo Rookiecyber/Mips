@@ -124,6 +124,9 @@ module datapath(
 	assign rtD = instrD[20:16];
 	assign rdD = instrD[15:11];
     assign saD = instrD [10:6];
+    
+    wire [63:0] hilo_o; // ÈíÌæ´úhiloreg
+    
 	//execute stage
 	floprc #(32) r1E(clk,rst,flushE,srcaD,srcaE);
 	floprc #(32) r2E(clk,rst,flushE,srcbD,srcbE);
@@ -136,7 +139,8 @@ module datapath(
 	mux3 #(32) forwardaemux(srcaE,resultW,aluoutM,forwardaE,srca2E);
 	mux3 #(32) forwardbemux(srcbE,resultW,aluoutM,forwardbE,srcb2E);
 	mux2 #(32) srcbmux(srcb2E,signimmE,alusrcE,srcb3E);
-	alu alu(srca2E,srcb3E,saE ,alucontrolE,aluoutE);
+	
+	alu alu(clk,rst,srca2E,srcb3E,saE ,alucontrolE,hilo_o[63:32],hilo_o[31:0],aluoutE,hilo_o);
 	mux2 #(5) wrmux(rtE,rdE,regdstE,writeregE);
 
 	//mem stage

@@ -56,12 +56,17 @@ module aludec(
 					`EXE_XOR :alucontrol <= `EXE_XOR_OP;
 					`EXE_NOR :alucontrol <= `EXE_NOR_OP;
 				//移位指令
-				`EXE_SLL    :alucontrol <= `EXE_SLL_OP   ;
-                `EXE_SLLV   :alucontrol <= `EXE_SLLV_OP     ;
-                `EXE_SRL    :alucontrol <= `EXE_SRL_OP      ;
-                `EXE_SRLV   :alucontrol <= `EXE_SRLV_OP     ;
-                `EXE_SRA    :alucontrol <= `EXE_SRA_OP      ;
-                `EXE_SRAV   :alucontrol <= `EXE_SRAV_OP     ;
+				`EXE_SLL    :alucontrol <= `EXE_SLL_OP;
+                `EXE_SLLV   :alucontrol <= `EXE_SLLV_OP;
+                `EXE_SRL    :alucontrol <= `EXE_SRL_OP;
+                `EXE_SRLV   :alucontrol <= `EXE_SRLV_OP;
+                `EXE_SRA    :alucontrol <= `EXE_SRA_OP;
+                `EXE_SRAV   :alucontrol <= `EXE_SRAV_OP;
+                //数据移动指令
+                `EXE_MFHI   :alucontrol <= `EXE_MFHI_OP     ;
+                `EXE_MTHI   :alucontrol <= `EXE_MTHI_OP     ;
+                `EXE_MFLO   :alucontrol <= `EXE_MFLO_OP     ;
+                `EXE_MTLO   :alucontrol <= `EXE_MTLO_OP     ;
                 //默认
                 default     :alucontrol <= `EXE_NOP_OP      ;
 				endcase
