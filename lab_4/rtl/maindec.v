@@ -51,7 +51,7 @@ module maindec(
 	// end
 	always @(*) begin
 		case (op)
-			`EXE_NOP: case(funct)
+			`EXE_NOP: case(funct) //R TYPE
 				//逻辑运算 前4条
 				`EXE_AND, `EXE_OR, `EXE_XOR, `EXE_NOR: controls <= 6'b110000; // R-type
                 //移位指令 6条
@@ -59,13 +59,16 @@ module maindec(
                 //数据移动指令
                 `EXE_MFHI, `EXE_MFLO: controls <= 6'b110000;
                 `EXE_MTHI, `EXE_MTLO: controls <= 6'b000000;
+                //算术指令 
+                `EXE_ADD, `EXE_ADDU, `EXE_SUB, `EXE_SUBU, `EXE_SLT, `EXE_SLTU, `EXE_MULT, `EXE_MULTU, `EXE_DIV, `EXE_DIVU: controls <= 6'b110000; // R-type
                 default:begin
                     controls <= 6'b000000;  // error op
                 end 
-			endcase
+			endcase // J TYPE
 			//逻辑运算 后4条
             `EXE_ANDI ,`EXE_XORI, `EXE_LUI, `EXE_ORI: controls <= 6'b101000; // Immediate
-			
+			//算术指令 J
+			`EXE_ADDI, `EXE_ADDIU ,`EXE_SLTI, `EXE_SLTIU: controls <= 6'b101000; 
 			default:begin
                 controls <= 6'b000000;  // error op
             end 
