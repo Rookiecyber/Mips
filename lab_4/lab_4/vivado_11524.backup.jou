@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Mon Jan  3 00:23:16 2022
+# Process ID: 11524
+# Current directory: D:/CPU/step_into_mips/lab_4/lab_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17052 D:\CPU\step_into_mips\lab_4\lab_4\lab_4.xpr
+# Log file: D:/CPU/step_into_mips/lab_4/lab_4/vivado.log
+# Journal file: D:/CPU/step_into_mips/lab_4/lab_4\vivado.jou
+# Running On: DESKTOP-NJ16J11, OS: Windows, CPU Frequency: 2304 MHz, CPU Physical cores: 4, Host memory: 8434 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/CPU/step_into_mips/lab_4/lab_4/lab_4.xpr
+launch_simulation
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config D:/CPU/step_into_mips/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut}} 
+relaunch_sim
+save_wave_config {D:/CPU/step_into_mips/lab_4/lab_4/testbench_behav.wcfg}
+close_sim

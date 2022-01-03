@@ -1,0 +1,60 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Sun Jan  2 23:28:11 2022
+# Process ID: 9128
+# Current directory: D:/CPU/step_into_mips/lab_4/lab_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5424 D:\CPU\step_into_mips\lab_4\lab_4\lab_4.xpr
+# Log file: D:/CPU/step_into_mips/lab_4/lab_4/vivado.log
+# Journal file: D:/CPU/step_into_mips/lab_4/lab_4\vivado.jou
+# Running On: DESKTOP-NJ16J11, OS: Windows, CPU Frequency: 2304 MHz, CPU Physical cores: 4, Host memory: 8434 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/CPU/step_into_mips/lab_4/lab_4/lab_4.xpr
+launch_simulation
+open_wave_config D:/CPU/step_into_mips/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+update_compile_order -fileset sources_1
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/pcreg}} 
+relaunch_sim
+save_wave_config {D:/CPU/step_into_mips/lab_4/lab_4/testbench_behav.wcfg}
+save_wave_config {D:/CPU/step_into_mips/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config D:/CPU/step_into_mips/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp}} 
+relaunch_sim
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/pcbrmux}} 
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+save_wave_config {D:/CPU/step_into_mips/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config D:/CPU/step_into_mips/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/c/u_maindec}} 
+relaunch_sim
+relaunch_sim
+import_files -norecurse D:/CPU/step_into_mips/lab_4/rtl/defines2.vh
+import_files -norecurse D:/CPU/step_into_mips/lab_4/rtl/instdec.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+import_files -force -norecurse D:/CPU/step_into_mips/lab_4/rtl/instdec.v
+update_compile_order -fileset sources_1
+relaunch_sim
+save_wave_config {D:/CPU/step_into_mips/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
