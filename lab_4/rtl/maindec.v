@@ -69,6 +69,16 @@ module maindec(
             `EXE_ANDI ,`EXE_XORI, `EXE_LUI, `EXE_ORI: controls <= 6'b101000; // Immediate
 			//ËãÊõÖ¸Áî J
 			`EXE_ADDI, `EXE_ADDIU ,`EXE_SLTI, `EXE_SLTIU: controls <= 6'b101000; 
+			
+			//·Ã´æÖ¸Áî
+			`EXE_LB : controls <= 6'b101011;
+            `EXE_LBU: controls <= 6'b101011;
+            `EXE_LH : controls <= 6'b101011;
+            `EXE_LHU: controls <= 6'b101011;
+            `EXE_LW : controls <= 6'b101011;  
+            `EXE_SB : controls <= 6'b001010;  
+            `EXE_SH : controls <= 6'b001010;  
+            `EXE_SW : controls <= 6'b001010; 
 			default:begin
                 controls <= 6'b000000;  // error op
             end 

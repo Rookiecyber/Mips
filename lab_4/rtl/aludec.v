@@ -92,6 +92,16 @@ module aludec(
             `EXE_ADDIU  :alucontrol <= `EXE_ADDIU_OP    ;
             `EXE_SLTI   :alucontrol <= `EXE_SLTI_OP     ;
             `EXE_SLTIU  :alucontrol <= `EXE_SLTIU_OP    ;
+            
+            //·Ã´æÖ¸Áî 
+            `EXE_LB     :alucontrol <= `EXE_LB_OP   ;
+            `EXE_LBU    :alucontrol <= `EXE_LBU_OP  ;
+            `EXE_LH     :alucontrol <= `EXE_LH_OP   ;
+            `EXE_LHU    :alucontrol <= `EXE_LHU_OP  ;
+            `EXE_LW     :alucontrol <= `EXE_LW_OP   ;
+            `EXE_SB     :alucontrol <= `EXE_SB_OP   ;
+            `EXE_SH     :alucontrol <= `EXE_SH_OP   ;
+            `EXE_SW     :alucontrol <= `EXE_SW_OP   ;
             default : alucontrol    <= `EXE_NOP_OP  ;
          endcase
 	end
