@@ -32,8 +32,11 @@ module alu(
 	output wire [63:0] hilo_out,
 	output wire overflow,
 	output wire zero,
-	output wire div_stallE
+	output reg div_stallE
     );
+    
+    wire div_ready;
+    reg start_div,signed_div;
     
     reg [31:0] y; //存储临时结果
     reg[31:0] b_qufan; // b取反
@@ -53,6 +56,9 @@ module alu(
 	
 	always @(*) begin
 	    b_qufan = 0;
+	    div_stallE = 1'b0;
+        start_div = 1'b0;
+        signed_div =1'b0;
 		case (alucontrol)
 			`EXE_AND_OP     :y <= a & b ;
             `EXE_OR_OP      :y <= a | b  ;
@@ -92,6 +98,35 @@ module alu(
             `EXE_ADDIU_OP   :y <= a + b;
             `EXE_SLTI_OP    :y <= $signed(a) < $signed(b);
             `EXE_SLTIU_OP   :y <= a < b;
+            
+            `EXE_DIV_OP  :begin
+                if(div_ready ==1'b0) begin
+                    start_div <= 1'b1;
+                    signed_div <=1'b1;
+                    div_stallE <=1'b1;
+                end else if (div_ready == 1'b1) begin
+                    start_div <= 1'b0;
+                    signed_div <=1'b1;
+                    div_stallE <=1'b0;
+                end 
+            end
+            `EXE_DIVU_OP :begin
+                if(div_ready ==1'b0) begin
+                    start_div <= 1'b1;
+                    signed_div <= 1'b0;
+                    div_stallE <=1'b1;
+                end else if (div_ready == 1'b1) begin
+                    start_div <= 1'b0;
+                    signed_div <=1'b0;
+                    div_stallE <=1'b0;
+                end else begin
+                    start_div <= 1'b0;
+                    signed_div <=1'b0;
+                    div_stallE <=1'b0;
+                end
+            end
+            
+            
          endcase
 	end
 	assign zero = (y == 32'b0);
@@ -119,20 +154,34 @@ module alu(
 //    assign div_res_ready = div_valid & ~stallM;  // E-M寄存器没有停顿
      assign div_res_ready = div_valid ;
 //    assign div_stallE = div_valid & ~div_res_valid & ~exceptionoccur;
-    assign div_stallE = div_valid & ~div_res_valid;
+   // assign div_stallE = div_valid & ~div_res_valid;
+    
     div u_div(
         .clk          ( clk          ),
         .rst          ( rst          ),
-        .signed_div_i ( div_sign ),          //是否为有符号除法（1为有符号）
+        .signed_div_i ( signed_div ),          //是否为有符号除法（1为有符号）
         .opdata1_i    ( a    ),              //被除数
         .opdata2_i    ( b    ),              //除数
-        .start_i      (    div_valid   ),      //是否开始除法
+        .start_i      (    start_div   ),      //是否开始除法
         .annul_i      (   1'b0    ),      //是否结束除法
         //输出
         .result_o     ( hilo_out_div     ),  //计算结果
 //        .ready_o      ( div_res_ready      ) //计算结果准备好即除法运算是否结束
-        .ready_o      ( div_res_valid      ) //计算结果准备好即除法运算是否结束
+        .ready_o      ( div_ready      ) //计算结果准备好即除法运算是否结束
     );
+//    div u_div(
+//        .clk          ( clk          ),
+//        .rst          ( rst          ),
+//        .signed_div_i ( div_sign ),          //是否为有符号除法（1为有符号）
+//        .opdata1_i    ( a    ),              //被除数
+//        .opdata2_i    ( b    ),              //除数
+//        .start_i      (    div_valid   ),      //是否开始除法
+//        .annul_i      (   1'b0    ),      //是否结束除法
+//        //输出
+//        .result_o     ( hilo_out_div     ),  //计算结果
+////        .ready_o      ( div_res_ready      ) //计算结果准备好即除法运算是否结束
+//        .ready_o      ( div_res_valid      ) //计算结果准备好即除法运算是否结束
+//    );
 //	div_radix2 DIV(
 //		.clk(clk),
 //		.rst(rst | flushE | exceptionoccur),
@@ -151,7 +200,7 @@ module alu(
     always @(clk)begin 
         if(rst) begin hilo <= {64{1'b0}};end
         else if(mul_valid ==1'b1) begin hilo <= hilo_out_mul; end
-        else if(div_res_valid == 1'b1) begin hilo <= hilo_out_div; end
+        else if(div_ready == 1'b1) begin hilo <= hilo_out_div; end
         else case(alucontrol)
                 `EXE_MTHI_OP: hilo <= {a,hilo[31:0]};
                 `EXE_MTLO_OP: hilo <= {hilo[63:32],a};
