@@ -86,3 +86,8 @@ add_wave {{/testbench/dut/mips/dp/alu/div_ready}}
 relaunch_sim
 run all
 save_wave_config {C:/Users/wlt/Desktop/step_into_mips/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/wlt/Desktop/step_into_mips/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+save_wave_config {C:/Users/wlt/Desktop/step_into_mips/lab_4/lab_4/testbench_behav.wcfg}

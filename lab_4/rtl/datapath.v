@@ -43,6 +43,7 @@ module datapath(
 	input wire regwriteM,
 	output wire[31:0] aluoutM,writedataM,
 	input wire[31:0] readdataM,
+	output wire[3:0] selM,
 	//writeback stage
 	input wire memtoregW,
 	input wire regwriteW
@@ -66,13 +67,16 @@ module datapath(
 	wire [31:0] signimmE;
 	wire [31:0] srcaE,srca2E,srcbE,srcb2E,srcb3E;
 	wire [31:0] aluoutE;
+	wire [3:0] selE;
+	wire [31:0] handled_WriteDataE;
 	//mem stage
 	wire [4:0] writeregM;
+	wire [7:0] alucontrolM;
 	//writeback stage
 	wire [4:0] writeregW;
 	wire [31:0] aluoutW,readdataW,resultW;
-
-
+    wire [7:0] alucontrolW;
+    wire [31:0] handled_readdataW;
      //新添的信号 
      wire div_stall; //div运算stallE信号
      wire overflowE;
@@ -153,15 +157,36 @@ module datapath(
 	
 	alu alu(clk,rst,srca2E,srcb3E,saE ,alucontrolE,hilo_o[63:32],hilo_o[31:0],aluoutE,hilo_o,overflowE,zeroE,div_stall);
 	mux2 #(5) wrmux(rtE,rdE,regdstE,writeregE);
-
-	//mem stage
-	flopr #(32) r1M(clk,rst,srcb2E,writedataM);
+    
+    //处理 SB,SH,SW 
+    Writedata_handler u_WriteData_handle(
+        .alucontrolE ( alucontrolE ),
+        .aluoutE     ( aluoutE     ),
+        .WriteDataE  ( srcb2E  ),
+        .sel         ( selE         ),
+        .handled_WriteDataE  ( handled_WriteDataE  )
+    );
+	//mem stage               //srcb2E即writedataE
+	flopr #(32) r1M(clk,rst,handled_WriteDataE,writedataM);
 	flopr #(32) r2M(clk,rst,aluoutE,aluoutM);
 	flopr #(5) r3M(clk,rst,writeregE,writeregM);
-
+    flopr #(8) r4M(clk,rst,alucontrolE,alucontrolM);
+    flopr #(4) r5M(clk,rst,selE ,selM );
+//    flopr #(32) r5M(clk,rst,handled_WriteDataE ,writedataM  );
+	
 	//writeback stage
 	flopr #(32) r1W(clk,rst,aluoutM,aluoutW);
 	flopr #(32) r2W(clk,rst,readdataM,readdataW);
 	flopr #(5) r3W(clk,rst,writeregM,writeregW);
-	mux2 #(32) resmux(aluoutW,readdataW,memtoregW,resultW);
+	flopr #(8) r4W(clk,rst,alucontrolM,alucontrolW);
+	
+	//对从mem 取出的数据进行处理
+	Readdata_handler u_Readdata_handler(
+        .alucontrolW ( alucontrolW ),
+        .readdataW   ( readdataW   ),
+        .dataadrW    ( aluoutW    ),
+        .handled_readdataW  ( handled_readdataW  )
+    );
+//	mux2 #(32) resmux(aluoutW,readdataW,memtoregW,resultW);
+    mux2 #(32) resmux(aluoutW,handled_readdataW,memtoregW,resultW);
 endmodule

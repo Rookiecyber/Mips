@@ -28,9 +28,10 @@ module top(
     );
 
 	wire[31:0] pc,instr,readdata;
-
-	mips mips(clk,rst,pc,instr,memwrite,dataadr,writedata,readdata);
+    wire [3:0] sel;
+	mips mips(clk,rst,pc,instr,memwrite,dataadr,writedata,readdata,sel);
 	inst_mem imem(~clk,pc,instr);
-	data_mem dmem(~clk,{4{memwrite}},dataadr,writedata,readdata);
+//	data_mem dmem(~clk,{4{memwrite}},dataadr,writedata,readdata);
+	data_mem dmem(~clk,sel,dataadr,writedata,readdata);
 	instdec my_instdec(instr,ascii);
 endmodule

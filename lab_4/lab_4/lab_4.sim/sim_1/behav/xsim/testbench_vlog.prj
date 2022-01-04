@@ -2,6 +2,8 @@
 verilog xil_defaultlib  --include "../../../../lab_4.srcs/sources_1/imports/CPU" --include "../../../../lab_4.srcs/sources_1/imports/rtl" \
 "../../../../lab_4.srcs/sources_1/ip/data_mem_1/sim/data_mem.v" \
 "../../../../lab_4.srcs/sources_1/ip/inst_mem_1/sim/inst_mem.v" \
+"../../../../lab_4.srcs/sources_1/new/Readdata_handler.v" \
+"../../../../lab_4.srcs/sources_1/new/Writedata_handler.v" \
 "../../../../../rtl/adder.v" \
 "../../../../../rtl/alu.v" \
 "../../../../../rtl/aludec.v" \
