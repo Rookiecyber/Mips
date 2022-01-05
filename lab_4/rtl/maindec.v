@@ -23,32 +23,29 @@
 module maindec(
 	input wire[5:0] op,
 	input wire[5:0] funct,
+	input wire [4:0] rs,
+    input wire[4:0] rt,
 	output wire memtoreg,memwrite,
 	output wire branch,alusrc,
 	output wire regdst,regwrite,
-	output wire jump
-	//output wire[1:0] aluop
+	output wire jump,jumpr,write31,link
+
     );
 	reg[5:0] controls;
 	// assign {regwrite,regdst,alusrc,branch,memwrite,memtoreg,jump,aluop} = controls;
 	assign {regwrite,regdst,alusrc,branch,memwrite,memtoreg} = controls;
 	
-	// j 型指令
-	assign jump = 0;
-
-
-	// always @(*) begin
-	// 	case (op)
-	// 		6'b000000:controls <= 9'b110000010;//R-TYRE
-	// 		6'b100011:controls <= 9'b101001000;//LW
-	// 		6'b101011:controls <= 9'b001010000;//SW
-	// 		6'b000100:controls <= 9'b000100001;//BEQ
-	// 		6'b001000:controls <= 9'b101000000;//ADDI
-			
-	// 		6'b000010:controls <= 9'b000000100;//J
-	// 		default:  controls <= 9'b000000000;//illegal op
-	// 	endcase
-	// end
+	// 分支指令
+	// jump: 跳转; 
+	// jumpr: 跳转地址为寄存器的值; 
+	// write31: 需要写31号寄存器;
+	// link : 需要将 pc+8 写回寄存器
+	assign jump = ((op == `EXE_J) || (op == `EXE_JAL)) ? 1 : 0;
+    assign jumpr = ((op == `EXE_NOP) && ((funct == `EXE_JR) || (funct == `EXE_JALR))) ? 1 : 0;
+    assign write31 = (((op == `EXE_REGIMM_INST) && (rt == `EXE_BLTZAL || rt == `EXE_BGEZAL)) // 两条bzal指令
+                        || (op == `EXE_JAL)) ? 1 : 0;  // jal指令
+    assign link = (((op == `EXE_REGIMM_INST) && (rt == `EXE_BLTZAL || rt == `EXE_BGEZAL))
+                    || (op == `EXE_JAL))|| ((op==`EXE_NOP)&&(funct == `EXE_JALR));
 	always @(*) begin
 		case (op)
 			`EXE_NOP: case(funct) //R TYPE
@@ -61,6 +58,11 @@ module maindec(
                 `EXE_MTHI, `EXE_MTLO: controls <= 6'b000000;
                 //算术指令 
                 `EXE_ADD, `EXE_ADDU, `EXE_SUB, `EXE_SUBU, `EXE_SLT, `EXE_SLTU, `EXE_MULT, `EXE_MULTU, `EXE_DIV, `EXE_DIVU: controls <= 6'b110000; // R-type
+                
+                //跳转指令 
+                `EXE_JR:  controls <= 6'b000000;
+                `EXE_JALR:controls <= 6'b110000;  
+                
                 default:begin
                     controls <= 6'b000000;  // error op
                 end 
@@ -70,6 +72,20 @@ module maindec(
 			//算术指令 J
 			`EXE_ADDI, `EXE_ADDIU ,`EXE_SLTI, `EXE_SLTIU: controls <= 6'b101000; 
 			
+			//分支跳转指令 
+			`EXE_BEQ :controls <= 6'b000100;
+			`EXE_BGTZ:controls <= 6'b000100;
+			`EXE_BLEZ:controls <= 6'b000100;
+			`EXE_BNE :controls <= 6'b000100;
+			`EXE_J  : controls <= 6'b000000;
+            `EXE_JAL: controls <= 6'b100000;
+            `EXE_REGIMM_INST: case(rt)
+                `EXE_BLTZ   :controls <= 6'b000100      ;
+                `EXE_BLTZAL :controls <= 6'b100100      ;
+                `EXE_BGEZ   :controls <= 6'b000100      ;
+                `EXE_BGEZAL :controls <= 6'b100100      ;
+                default: controls <= 6'b000000; //error
+                endcase
 			//访存指令
 			`EXE_LB : controls <= 6'b101011;
             `EXE_LBU: controls <= 6'b101011;

@@ -24,9 +24,10 @@ module controller(
 	input wire clk,rst,
 	//decode stage
 	input wire[5:0] opD,functD,
+	input wire[4:0] rsD,rtD,
     input wire equalD,
-	output wire pcsrcD,branchD,jumpD,
-	
+	output wire pcsrcD,branchD,jumpD,jumprD,write31D,linkD ,
+	output wire[7:0] alucontrolD,
 	//execute stage
 	input wire stallE,
 	input wire flushE,
@@ -46,34 +47,33 @@ module controller(
 //	wire[1:0] aluopD;
 	wire memtoregD,memwriteD,alusrcD,
 		regdstD,regwriteD;
-	wire[7:0] alucontrolD;
+//	wire[7:0] alucontrolD;
 
 	//execute stage
 	wire memwriteE;
 
-//	maindec md(
-//		opD,
-//		memtoregD,memwriteD,
-//		branchD,alusrcD,
-//		regdstD,regwriteD,
-//		jumpD,
-//		aluopD
-//		);
+
 maindec u_maindec(
 		.op       ( opD       ),
 		.funct     ( functD     ),
+		.rs    ( rsD    ),
+		.rt    (  rtD   ),
 		.memtoreg ( memtoregD ),
 		.memwrite ( memwriteD ),
 		.branch   ( branchD   ),
 		.alusrc   ( alusrcD   ),
 		.regdst   ( regdstD   ),
 		.regwrite ( regwriteD ),
-		.jump     ( jumpD     )
+		.jump     ( jumpD     ),
+		.jumpr    (    jumprD       ),
+		.write31   (   write31D    ),
+		.link     (   linkD   )
 	);
-//	aludec ad(functD,aluopD,alucontrolD);
 aludec u_aludec(
 		.op    ( opD    ),
 		.funct ( functD ),
+		.rs    ( rsD    ),
+		.rt    (  rtD   ),
 		.alucontrol  ( alucontrolD  )
 	);
 	assign pcsrcD = branchD & equalD;

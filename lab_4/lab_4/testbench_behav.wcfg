@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="860.300 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,217.479 ns"></ZoomEndTime>
-      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
+      <ZoomStartTime time="239.240 ns"></ZoomStartTime>
+      <ZoomEndTime time="338.641 ns"></ZoomEndTime>
+      <Cursor1Time time="340.440 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="253"></NameColumnWidth>
-      <ValueColumnWidth column_width="92"></ValueColumnWidth>
+      <NameColumnWidth column_width="238"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="17" />
+   <WVObjectSize size="11" />
    <wvobject fp_name="/testbench/dut/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -27,25 +27,6 @@
    <wvobject fp_name="/testbench/dut/rst" type="logic">
       <obj_property name="ElementShortName">rst</obj_property>
       <obj_property name="ObjectShortName">rst</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/writedata" type="array">
-      <obj_property name="ElementShortName">writedata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">writedata[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/dataadr" type="array">
-      <obj_property name="ElementShortName">dataadr[31:0]</obj_property>
-      <obj_property name="ObjectShortName">dataadr[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/memwrite" type="logic">
-      <obj_property name="ElementShortName">memwrite</obj_property>
-      <obj_property name="ObjectShortName">memwrite</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/ascii" type="array">
-      <obj_property name="ElementShortName">ascii[39:0]</obj_property>
-      <obj_property name="ObjectShortName">ascii[39:0]</obj_property>
-      <obj_property name="Radix">ASCIIRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/dut/pc" type="array">
       <obj_property name="ElementShortName">pc[31:0]</obj_property>
@@ -55,45 +36,25 @@
       <obj_property name="ElementShortName">instr[31:0]</obj_property>
       <obj_property name="ObjectShortName">instr[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbench/dut/readdata" type="array">
-      <obj_property name="ElementShortName">readdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">readdata[31:0]</obj_property>
+   <wvobject fp_name="/testbench/dut/ascii" type="array">
+      <obj_property name="ElementShortName">ascii[39:0]</obj_property>
+      <obj_property name="ObjectShortName">ascii[39:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbench/dut/mips/dp/alu/a" type="array">
-      <obj_property name="ElementShortName">a[31:0]</obj_property>
-      <obj_property name="ObjectShortName">a[31:0]</obj_property>
+   <wvobject fp_name="/testbench/dut/mips/dp/jumpD" type="logic">
+      <obj_property name="ElementShortName">jumpD</obj_property>
+      <obj_property name="ObjectShortName">jumpD</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbench/dut/mips/dp/alu/b" type="array">
-      <obj_property name="ElementShortName">b[31:0]</obj_property>
-      <obj_property name="ObjectShortName">b[31:0]</obj_property>
+   <wvobject fp_name="/testbench/dut/mips/dp/jumprD" type="logic">
+      <obj_property name="ElementShortName">jumprD</obj_property>
+      <obj_property name="ObjectShortName">jumprD</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbench/dut/mips/dp/alu/y_out" type="array">
-      <obj_property name="ElementShortName">y_out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">y_out[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/mips/dp/alu/hi" type="array">
-      <obj_property name="ElementShortName">hi[31:0]</obj_property>
-      <obj_property name="ObjectShortName">hi[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/mips/dp/alu/lo" type="array">
-      <obj_property name="ElementShortName">lo[31:0]</obj_property>
-      <obj_property name="ObjectShortName">lo[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/mips/dp/alu/div_stallE" type="logic">
-      <obj_property name="ElementShortName">div_stallE</obj_property>
-      <obj_property name="ObjectShortName">div_stallE</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/mips/dp/alu/div_ready" type="logic">
-      <obj_property name="ElementShortName">div_ready</obj_property>
-      <obj_property name="ObjectShortName">div_ready</obj_property>
-   </wvobject>
-   <wvobject fp_name="group39" type="group">
+   <wvobject fp_name="group295" type="group">
       <obj_property name="label">regfile</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/testbench/dut/mips/dp/rf/rf[0]" type="array">
-         <obj_property name="ElementShortName">[0][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
-      </wvobject>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/testbench/dut/mips/dp/rf/rf[1]" type="array">
          <obj_property name="ElementShortName">[1][31:0]</obj_property>
          <obj_property name="ObjectShortName">[1][31:0]</obj_property>
@@ -106,9 +67,40 @@
          <obj_property name="ElementShortName">[3][31:0]</obj_property>
          <obj_property name="ObjectShortName">[3][31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/dut/mips/dp/rf/rf[4]" type="array">
-         <obj_property name="ElementShortName">[4][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+      <wvobject fp_name="/testbench/dut/mips/dp/rf/rf[31]" type="array">
+         <obj_property name="ElementShortName">[31][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[31][31:0]</obj_property>
       </wvobject>
+   </wvobject>
+   <wvobject fp_name="group396" type="group">
+      <obj_property name="label">writereg</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/dut/mips/dp/tempregE" type="array">
+         <obj_property name="ElementShortName">tempregE[4:0]</obj_property>
+         <obj_property name="ObjectShortName">tempregE[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/dut/mips/dp/writeregE" type="array">
+         <obj_property name="ElementShortName">writeregE[4:0]</obj_property>
+         <obj_property name="ObjectShortName">writeregE[4:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/dut/mips/dp/writeregM" type="array">
+         <obj_property name="ElementShortName">writeregM[4:0]</obj_property>
+         <obj_property name="ObjectShortName">writeregM[4:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/dut/mips/dp/writeregW" type="array">
+         <obj_property name="ElementShortName">writeregW[4:0]</obj_property>
+         <obj_property name="ObjectShortName">writeregW[4:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/pcplus8E" type="array">
+      <obj_property name="ElementShortName">pcplus8E[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pcplus8E[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/aluoutE" type="array">
+      <obj_property name="ElementShortName">aluoutE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluoutE[31:0]</obj_property>
    </wvobject>
 </wave_config>
