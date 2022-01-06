@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_top_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="778,467.916 ns"></ZoomStartTime>
+      <ZoomEndTime time="778,514.817 ns"></ZoomEndTime>
+      <Cursor1Time time="778,504.616 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="228"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wave_markers>
+      <marker time="7730000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/tb_top/resetn" type="logic">
+      <obj_property name="ElementShortName">resetn</obj_property>
+      <obj_property name="ObjectShortName">resetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="group39" type="group">
+      <obj_property name="label">debug</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_top/debug_wb_rf_wdata_v" type="array">
+         <obj_property name="ElementShortName">debug_wb_rf_wdata_v[31:0]</obj_property>
+         <obj_property name="ObjectShortName">debug_wb_rf_wdata_v[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/debug_wb_rf_wdata" type="array">
+         <obj_property name="ElementShortName">debug_wb_rf_wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">debug_wb_rf_wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/debug_wb_rf_wnum" type="array">
+         <obj_property name="ElementShortName">debug_wb_rf_wnum[4:0]</obj_property>
+         <obj_property name="ObjectShortName">debug_wb_rf_wnum[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/debug_wb_rf_wen" type="array">
+         <obj_property name="ElementShortName">debug_wb_rf_wen[3:0]</obj_property>
+         <obj_property name="ObjectShortName">debug_wb_rf_wen[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/debug_wb_pc" type="array">
+         <obj_property name="ElementShortName">debug_wb_pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">debug_wb_pc[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group38" type="group">
+      <obj_property name="label">inist</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/inst_sram_rdata" type="array">
+         <obj_property name="ElementShortName">inst_sram_rdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">inst_sram_rdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/inst_sram_wdata" type="array">
+         <obj_property name="ElementShortName">inst_sram_wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">inst_sram_wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/inst_sram_wen" type="array">
+         <obj_property name="ElementShortName">inst_sram_wen[3:0]</obj_property>
+         <obj_property name="ObjectShortName">inst_sram_wen[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/inst_sram_addr" type="array">
+         <obj_property name="ElementShortName">inst_sram_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">inst_sram_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/inst_sram_wen" type="array">
+         <obj_property name="ElementShortName">inst_sram_wen[3:0]</obj_property>
+         <obj_property name="ObjectShortName">inst_sram_wen[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/inst_sram_en" type="logic">
+         <obj_property name="ElementShortName">inst_sram_en</obj_property>
+         <obj_property name="ObjectShortName">inst_sram_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/inst_sram_addr" type="array">
+         <obj_property name="ElementShortName">inst_sram_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">inst_sram_addr[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/asciiF" type="array">
+      <obj_property name="ElementShortName">asciiF[39:0]</obj_property>
+      <obj_property name="ObjectShortName">asciiF[39:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="group47" type="group">
+      <obj_property name="label">data</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/data_sram_wen" type="array">
+         <obj_property name="ElementShortName">data_sram_wen[3:0]</obj_property>
+         <obj_property name="ObjectShortName">data_sram_wen[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/data_sram_addr" type="array">
+         <obj_property name="ElementShortName">data_sram_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_sram_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/data_sram_wdata" type="array">
+         <obj_property name="ElementShortName">data_sram_wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_sram_wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/data_sram_rdata" type="array">
+         <obj_property name="ElementShortName">data_sram_rdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_sram_rdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/data_sram_wenM" type="array">
+         <obj_property name="ElementShortName">data_sram_wenM[3:0]</obj_property>
+         <obj_property name="ObjectShortName">data_sram_wenM[3:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group86" type="group">
+      <obj_property name="label">aluout</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/aluoutE" type="array">
+         <obj_property name="ElementShortName">aluoutE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aluoutE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/aluoutM" type="array">
+         <obj_property name="ElementShortName">aluoutM[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aluoutM[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/tempaluoutE" type="array">
+         <obj_property name="ElementShortName">tempaluoutE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">tempaluoutE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/aluoutW" type="array">
+         <obj_property name="ElementShortName">aluoutW[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aluoutW[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/alu/y" type="array">
+      <obj_property name="ElementShortName">y[31:0]</obj_property>
+      <obj_property name="ObjectShortName">y[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/alu/y_out" type="array">
+      <obj_property name="ElementShortName">y_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">y_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/alu/a" type="array">
+      <obj_property name="ElementShortName">a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">a[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/alu/b" type="array">
+      <obj_property name="ElementShortName">b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">b[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/srcb2E" type="array">
+      <obj_property name="ElementShortName">srcb2E[31:0]</obj_property>
+      <obj_property name="ObjectShortName">srcb2E[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/signimmE" type="array">
+      <obj_property name="ElementShortName">signimmE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">signimmE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/alusrcE" type="logic">
+      <obj_property name="ElementShortName">alusrcE</obj_property>
+      <obj_property name="ObjectShortName">alusrcE</obj_property>
+   </wvobject>
+   <wvobject fp_name="group99" type="group">
+      <obj_property name="label">PC</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/pcF" type="array">
+         <obj_property name="ElementShortName">pcF[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcF[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/pcD" type="array">
+         <obj_property name="ElementShortName">pcD[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcD[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/pcE" type="array">
+         <obj_property name="ElementShortName">pcE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/pcM" type="array">
+         <obj_property name="ElementShortName">pcM[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcM[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/pcW" type="array">
+         <obj_property name="ElementShortName">pcW[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcW[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/rf/rf" type="array">
+      <obj_property name="ElementShortName">rf[31:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">rf[31:0][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/aluoutM" type="array">
+      <obj_property name="ElementShortName">aluoutM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluoutM[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/aluoutconvertM" type="array">
+      <obj_property name="ElementShortName">aluoutconvertM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluoutconvertM[31:0]</obj_property>
+   </wvobject>
+</wave_config>

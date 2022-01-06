@@ -1,0 +1,41 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../../mycpu" --include "../../../../../../rtl/xilinx_ip/clk_pll" \
+"../../../../../../rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v" \
+"../../../../../../rtl/xilinx_ip/clk_pll/clk_pll.v" \
+"../../../../../../rtl/xilinx_ip/data_ram/sim/data_ram.v" \
+"../../../../../../rtl/xilinx_ip/inst_ram/sim/inst_ram.v" \
+"../../../../../../mycpu/Readdata_handler.v" \
+"../../../../../../mycpu/Writedata_handler.v" \
+"../../../../../../mycpu/adder.v" \
+"../../../../../../mycpu/alu.v" \
+"../../../../../../mycpu/aludec.v" \
+"../../../../../../rtl/BRIDGE/bridge_1x2.v" \
+"../../../../../../rtl/CONFREG/confreg.v" \
+"../../../../../../mycpu/controller.v" \
+"../../../../../../mycpu/datapath.v" \
+"../../../../../../mycpu/div.v" \
+"../../../../../../mycpu/eqcmp.v" \
+"../../../../../../mycpu/flopenr.v" \
+"../../../../../../mycpu/flopenrc.v" \
+"../../../../../../mycpu/flopr.v" \
+"../../../../../../mycpu/floprc.v" \
+"../../../../../../mycpu/hazard.v" \
+"../../../../../../mycpu/instdec.v" \
+"../../../../../../mycpu/maindec.v" \
+"../../../../../../mycpu/mmu.v" \
+"../../../../../../mycpu/mux2.v" \
+"../../../../../../mycpu/mux3.v" \
+"../../../../../../mycpu/my_mul.v" \
+"../../../../../../mycpu/mycpu_top.v" \
+"../../../../../../mycpu/pc.v" \
+"../../../../../../mycpu/regfile.v" \
+"../../../../../../mycpu/signext.v" \
+"../../../../../../mycpu/sl2.v" \
+"../../../../../../rtl/soc_lite_top.v" \
+"../../../../../../testbench/mycpu_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

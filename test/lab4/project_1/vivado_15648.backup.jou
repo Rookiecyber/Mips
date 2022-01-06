@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Sat Jan  1 12:38:16 2022
+# Process ID: 15648
+# Current directory: E:/FPGAprojects/CO-lab-material-CQU/test/lab4/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7536 E:\FPGAprojects\CO-lab-material-CQU\test\lab4\project_1\project_1.xpr
+# Log file: E:/FPGAprojects/CO-lab-material-CQU/test/lab4/project_1/vivado.log
+# Journal file: E:/FPGAprojects/CO-lab-material-CQU/test/lab4/project_1\vivado.jou
+# Running On: DESKTOP-R7LDCND, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 21333 MB
+#-----------------------------------------------------------start_gui
+oopen_project E:/FPGAprojects/CO-lab-material-CQU/test/lab4/project_1/project_1.xpruupdate_compile_order -fileset sources_1generate_target all [get_files E:/FPGAprojects/CO-lab-material-CQU/test/lab4/rtl/xilinx_ip/data_ram/data_ram.xci]
