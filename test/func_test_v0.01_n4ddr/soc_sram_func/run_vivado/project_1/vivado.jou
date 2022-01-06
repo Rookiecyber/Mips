@@ -12,3 +12,51 @@
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/wlt/Desktop/step_into_mips/test/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/wlt/Desktop/step_into_mips/test/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/tb_top_behav.wcfg
+source tb_top.tcl
+run all
+close_sim
+launch_simulation
+open_wave_config C:/Users/wlt/Desktop/step_into_mips/test/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/tb_top_behav.wcfg
+source tb_top.tcl
+run all
+close_sim
+launch_simulation
+open_wave_config C:/Users/wlt/Desktop/step_into_mips/test/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/tb_top_behav.wcfg
+source tb_top.tcl
+run all
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/u_cpu/u_datapath/alu/hilo_out_div}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/u_cpu/u_datapath/alu/hilo_out}} 
+relaunch_sim
+run all
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/u_cpu/u_datapath/alu/u_div/opdata1_i}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/u_cpu/u_datapath/alu/u_div/opdata2_i}} 
+run all
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/u_cpu/u_datapath/alu/div_stallE}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/u_cpu/u_datapath/alu/div_ready}} 
+run all
+restart
+run all
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/u_cpu/u_datapath/alu/u_div/result_o}} 
+restart
+run all
+save_wave_config {C:/Users/wlt/Desktop/step_into_mips/test/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/tb_top_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/wlt/Desktop/step_into_mips/test/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/tb_top_behav.wcfg
+source tb_top.tcl
+run all
+close_sim
+launch_simulation
+open_wave_config C:/Users/wlt/Desktop/step_into_mips/test/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/tb_top_behav.wcfg
+source tb_top.tcl
+run all

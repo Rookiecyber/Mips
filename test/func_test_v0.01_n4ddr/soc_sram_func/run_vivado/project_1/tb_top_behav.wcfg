@@ -11,17 +11,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="778,467.916 ns"></ZoomStartTime>
-      <ZoomEndTime time="778,514.817 ns"></ZoomEndTime>
-      <Cursor1Time time="778,504.616 ns"></Cursor1Time>
+      <ZoomStartTime time="1,201,955.366 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,202,239.712 ns"></ZoomEndTime>
+      <Cursor1Time time="1,202,057.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="228"></NameColumnWidth>
+      <NameColumnWidth column_width="218"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="25" />
    <wave_markers>
       <marker time="7730000" label="" />
+      <marker time="778065000" label="" />
    </wave_markers>
    <wvobject fp_name="/tb_top/resetn" type="logic">
       <obj_property name="ElementShortName">resetn</obj_property>
@@ -87,15 +88,9 @@
          <obj_property name="ObjectShortName">inst_sram_addr[31:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="/tb_top/soc_lite/u_cpu/asciiF" type="array">
-      <obj_property name="ElementShortName">asciiF[39:0]</obj_property>
-      <obj_property name="ObjectShortName">asciiF[39:0]</obj_property>
-      <obj_property name="Radix">ASCIIRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="group47" type="group">
       <obj_property name="label">data</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_top/soc_lite/u_cpu/data_sram_wen" type="array">
          <obj_property name="ElementShortName">data_sram_wen[3:0]</obj_property>
          <obj_property name="ObjectShortName">data_sram_wen[3:0]</obj_property>
@@ -120,7 +115,6 @@
    <wvobject fp_name="group86" type="group">
       <obj_property name="label">aluout</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/aluoutE" type="array">
          <obj_property name="ElementShortName">aluoutE[31:0]</obj_property>
          <obj_property name="ObjectShortName">aluoutE[31:0]</obj_property>
@@ -166,6 +160,13 @@
       <obj_property name="ElementShortName">alusrcE</obj_property>
       <obj_property name="ObjectShortName">alusrcE</obj_property>
    </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/asciiF" type="array">
+      <obj_property name="ElementShortName">asciiF[39:0]</obj_property>
+      <obj_property name="ObjectShortName">asciiF[39:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
    <wvobject fp_name="group99" type="group">
       <obj_property name="label">PC</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -173,6 +174,8 @@
       <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/pcF" type="array">
          <obj_property name="ElementShortName">pcF[31:0]</obj_property>
          <obj_property name="ObjectShortName">pcF[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#0000FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/pcD" type="array">
          <obj_property name="ElementShortName">pcD[31:0]</obj_property>
@@ -194,7 +197,6 @@
    <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/rf/rf" type="array">
       <obj_property name="ElementShortName">rf[31:0][31:0]</obj_property>
       <obj_property name="ObjectShortName">rf[31:0][31:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/tb_top/soc_lite/u_cpu/aluoutM" type="array">
       <obj_property name="ElementShortName">aluoutM[31:0]</obj_property>
@@ -203,5 +205,33 @@
    <wvobject fp_name="/tb_top/soc_lite/u_cpu/aluoutconvertM" type="array">
       <obj_property name="ElementShortName">aluoutconvertM[31:0]</obj_property>
       <obj_property name="ObjectShortName">aluoutconvertM[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/alu/hilo_out_div" type="array">
+      <obj_property name="ElementShortName">hilo_out_div[63:0]</obj_property>
+      <obj_property name="ObjectShortName">hilo_out_div[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/alu/hilo_out" type="array">
+      <obj_property name="ElementShortName">hilo_out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">hilo_out[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/alu/u_div/opdata1_i" type="array">
+      <obj_property name="ElementShortName">opdata1_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">opdata1_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/alu/u_div/opdata2_i" type="array">
+      <obj_property name="ElementShortName">opdata2_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">opdata2_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/alu/div_stallE" type="logic">
+      <obj_property name="ElementShortName">div_stallE</obj_property>
+      <obj_property name="ObjectShortName">div_stallE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/alu/div_ready" type="logic">
+      <obj_property name="ElementShortName">div_ready</obj_property>
+      <obj_property name="ObjectShortName">div_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/soc_lite/u_cpu/u_datapath/alu/u_div/result_o" type="array">
+      <obj_property name="ElementShortName">result_o[63:0]</obj_property>
+      <obj_property name="ObjectShortName">result_o[63:0]</obj_property>
    </wvobject>
 </wave_config>

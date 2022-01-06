@@ -99,7 +99,8 @@ module hazard(
 		//stalling D stalls all previous stages
 //	assign #1 flushE = (stallD & ~div_stall)|flushD;
 	assign #1 flushE = (stallD & ~div_stall);
-	assign #1 stallM =0;
+	//assign #1 stallM =0;
+	assign #1 stallM = 0 ;
 //	assign #1 flushM = div_stall |flushD; 
     assign #1 flushM = div_stall ; 
 		//stalling D flushes next stage
